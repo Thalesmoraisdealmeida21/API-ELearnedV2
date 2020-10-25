@@ -5,10 +5,13 @@ import authRouter from '@modules/user/infra/http/routes/auth.routes';
 
 import courseRouter from '@modules/course/infra/http/routes/course.routes';
 
+import lessonRouter from '@modules/lesson/infra/http/routes/lesson.routes';
+
 const routes = Router();
 
 routes.use('/users', userRouter);
 routes.use('/auth', authRouter);
 routes.use('/courses', courseRouter);
+routes.use('/lessons', lessonRouter);
 
 export default routes;
