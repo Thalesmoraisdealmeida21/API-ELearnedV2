@@ -8,12 +8,21 @@ import CourseRepository from '@modules/course/infra/typeorm/repositories/CourseR
 
 import ILessonsRepository from '@modules/lesson/repositories/ILessonsRepository';
 import LessonsRepository from '@modules/lesson/infra/typeorm/repositories/LessonsRepository';
+
+import ICategoryRepository from '@modules/course/repositories/ICategoryRepository';
+import CategoryRepository from '@modules/course/infra/typeorm/repositories/CategoryRepository';
+
 import IHashProvider from './providers/HashProvider/models/IHashProvider';
 import HashProvider from './providers/HashProvider/implementation/HashProvider';
 
 container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
+);
+
+container.registerSingleton<ICategoryRepository>(
+  'CategoriesRepository',
+  CategoryRepository,
 );
 
 container.registerSingleton<ICourseRepository>(

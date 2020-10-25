@@ -5,8 +5,11 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToOne,
+  JoinColumn,
   OneToMany,
 } from 'typeorm';
+import Category from './Category';
 
 @Entity('courses')
 class Course {
@@ -15,6 +18,13 @@ class Course {
 
   @Column()
   name: string;
+
+  @Column()
+  categoryId: string;
+
+  @OneToOne(() => Category, { eager: true })
+  @JoinColumn()
+  category: Category;
 
   @Column()
   image: string;

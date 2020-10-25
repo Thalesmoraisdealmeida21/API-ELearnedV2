@@ -6,7 +6,7 @@ import ILessonsRepository from '../repositories/ILessonsRepository';
 
 interface IRequest {
   name: string;
-  duration: number;
+  duration: string;
   courseId: string;
   description: string;
   video: string;

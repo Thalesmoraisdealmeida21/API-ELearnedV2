@@ -6,11 +6,11 @@ import { Request, Response } from 'express';
 
 class CourseController {
   public async create(request: Request, response: Response): Promise<Response> {
-    const { name, image } = request.body;
+    const { name, image, category } = request.body;
 
     const createCourse = container.resolve(CreateCourseService);
 
-    const course = await createCourse.execute({ name, image });
+    const course = await createCourse.execute({ name, image, category });
 
     return response.json(course);
   }
